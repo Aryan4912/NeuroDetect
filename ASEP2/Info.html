@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Brain Tumors & AI Detection</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: white;
+      color: rgb(45, 62, 80);
+    }
+
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(0, 119, 204);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgb(45, 62, 80);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: rgb(0, 119, 204);
+    }
+
+    .hero {
+      background-color: rgb(235, 245, 255);
+      padding: 64px 32px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: rgb(0, 60, 110);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgb(60, 60, 60);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 30px;
+    }
+
+    .section {
+      padding: 64px 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      color: rgb(0, 119, 204);
+      margin-bottom: 16px;
+    }
+
+    .section p, .section ul {
+      font-size: 18px;
+      color: rgb(65, 65, 65);
+      line-height: 30px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .section ul {
+      padding-left: 20px;
+    }
+
+    .logo-row {
+      background-color: rgb(240, 240, 240);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      padding: 30px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgb(220, 220, 220);
+    }
+
+    .logo-row img {
+      height: 60px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .logo-row img:hover {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        margin-top: 12px;
+        gap: 20px;
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+
+      .section p, .section ul {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">NeuroDetect</div>
+    <div class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="News.html">News</a>
+        <a href="Info.html">Info</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Understanding Brain Tumors & AI Detection</h1>
+    <p>
+      Gain clarity on brain tumor types, symptoms, and how our AI-driven solution detects and classifies tumors from CT/MRI scans.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Understanding Brain Tumors</h2>
+    <p>Brain tumors are abnormal growths of cells in the brain or surrounding tissues. Some are benign (non-cancerous), while others are malignant (cancerous), and early detection is crucial for effective treatment and better outcomes.</p>
+  </div>
+
+  <div class="section">
+    <h2>Types of Brain Tumors</h2>
+    <ul>
+      <li><strong>Gliomas:</strong> Tumors originating from glial cells, common and often aggressive.</li>
+      <li><strong>Meningiomas:</strong> Develop in the membranes surrounding the brain and spinal cord, usually benign.</li>
+      <li><strong>Pituitary Tumors:</strong> Found in the pituitary gland, can affect hormone levels.</li>
+      <li><strong>Medulloblastomas:</strong> Affects children more, starts in the cerebellum.</li>
+      <li><strong>Schwannomas:</strong> Affect nerve sheaths, often benign.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Symptoms</h2>
+    <ul>
+      <li>Persistent headaches</li>
+      <li>Seizures</li>
+      <li>Vision or hearing problems</li>
+      <li>Memory loss or confusion</li>
+      <li>Difficulty with balance or coordination</li>
+      <li>Nausea or vomiting, especially in the morning</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Importance of Early Detection</h2>
+    <p>Detecting tumors early can significantly increase the chances of successful treatment. It helps in reducing the complexity of surgeries, the extent of medication, and improves survival rates. Our goal is to make early diagnosis accessible even in remote areas lacking specialized medical professionals.</p>
+  </div>
+
+  <div class="section">
+    <h2>How Our AI Model Works</h2>
+    <p>We use advanced deep learning models trained on thousands of CT and MRI brain scans to detect and classify brain tumors with high accuracy. Here’s a simplified breakdown:</p>
+    <ul>
+      <li><strong>Data Input:</strong> The system accepts CT or MRI scan images uploaded by the user.</li>
+      <li><strong>Preprocessing:</strong> The image is converted to a standard format using tools like OpenCV and preprocessed for noise reduction and clarity.</li>
+      <li><strong>Feature Extraction:</strong> A convolutional neural network (CNN) scans the image to detect subtle features.</li>
+      <li><strong>Classification:</strong> The AI model identifies if a tumor is present and predicts its type (e.g., Glioma, Meningioma).</li>
+      <li><strong>Output:</strong> A diagnosis summary is presented to the user with an option to generate an AI-based report.</li>
+    </ul>
+    <p>This allows even non-specialist healthcare workers to get valuable diagnostic support instantly and accurately.</p>
+  </div>
+
+  <div class="logo-row">
+      <img src="C:\Users\Aryan\Desktop\ASEP2\Static\Images\AIIMS _logo.png" alt="AIIMS Logo" />
+      <img src="Static/Images/WHO_logo.jpeg" alt="WHO Logo" />
+      <img src="Static/Images/Medtronic_logo.png" alt="Medtronic Logo" />
+  </div>
+</body>
+</html>

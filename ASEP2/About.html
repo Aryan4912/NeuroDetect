@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | NeuroDetect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: white;
+      color: rgb(45, 62, 80);
+    }
+
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(0, 119, 204);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgb(45, 62, 80);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: rgb(0, 119, 204);
+    }
+
+    .hero {
+      background-color: rgb(235, 245, 255);
+      padding: 64px 32px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: rgb(0, 60, 110);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgb(60, 60, 60);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 30px;
+    }
+
+    .section {
+      padding: 64px 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      color: rgb(0, 119, 204);
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      font-size: 18px;
+      color: rgb(65, 65, 65);
+      line-height: 30px;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .highlight-box {
+      background-color: rgb(0, 119, 204);
+      color: white;
+      padding: 32px;
+      border-radius: 12px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .highlight-box h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box p {
+      font-size: 17px;
+      line-height: 28px;
+      color: white;
+    }
+
+    footer {
+      background-color: rgb(240, 240, 240);
+      padding: 20px 0;
+      text-align: center;
+      border-top: 1px solid rgb(220, 220, 220);
+      margin-top: 64px;
+    }
+
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logos img {
+      height: 60px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .footer-logos img:hover {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        margin-top: 12px;
+        gap: 20px;
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+
+      .section p {
+        font-size: 16px;
+      }
+
+      .highlight-box h3 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">NeuroDetect</div>
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About Us</a>
+      <a href="News.html">News</a>
+      <a href="Info.html">Info</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>About NeuroDetect</h1>
+    <p>
+      Empowering early brain tumor detection with AI — for every patient, everywhere.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>
+      NeuroDetect is a forward-thinking healthcare initiative built at the intersection of technology, medicine, and compassion.
+      Our team is composed of researchers, engineers, and medical consultants working toward one mission: to improve access to brain tumor diagnostics using AI-powered tools.
+    </p>
+
+    <h2>What We Do</h2>
+    <p>
+      NeuroDetect uses cutting-edge machine learning to scan and interpret brain CT scans. Our AI system performs three critical tasks:
+      <strong>tumor detection</strong>, <strong>tumor type classification</strong>, and <strong>generation of a detailed diagnostic report</strong> using medically-relevant terminology.
+      This makes it easier for healthcare professionals to act quickly — and for patients to understand their condition with clarity.
+    </p>
+
+
+    <h2>Why It Matters</h2>
+    <p>
+      In rural and low-resource settings, waiting for a diagnosis can mean the difference between life and death.
+      With a lack of expert radiologists or neurologists, even a simple CT scan may not be properly analyzed for days.
+      NeuroDetect bridges that gap — providing an instant, intelligent second opinion, powered by deep learning.
+    </p>
+
+    <div class="highlight-box">
+      <h3>Our Social Impact</h3>
+      <p>
+        NeuroDetect empowers not just doctors, but patients — by offering instant, interpretable AI reports that can be shared with physicians even in the absence of specialist radiologists.
+        It’s a step toward healthcare equity powered by intelligent automation.
+      </p>      
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logos">
+        <img src="C:\Users\Aryan\Desktop\ASEP2\Static\Images\AIIMS _logo.png" alt="AIIMS Logo" />
+        <img src="Static/Images/WHO_logo.jpeg" alt="WHO Logo" />
+        <img src="Static/Images/Medtronic_logo.png" alt="Medtronic Logo" />
+    </div>
+  </footer>
+
+</body>
+</html>
