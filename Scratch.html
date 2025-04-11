@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News | NeuroDetect</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: white;
+      color: rgb(45, 62, 80);
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: rgb(0, 119, 204);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgb(45, 62, 80);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: rgb(0, 119, 204);
+    }
+
+    /* News Section */
+    .news-section {
+      padding: 64px 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .news-section h1 {
+      font-size: 42px;
+      color: rgb(0, 60, 110);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgb(220, 220, 220);
+      padding-bottom: 20px;
+    }
+
+    .news-item img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+
+    .news-content {
+      flex: 1;
+    }
+
+    .news-content h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .news-content h2 a {
+      text-decoration: none;
+      color: rgb(0, 119, 204);
+      transition: color 0.3s ease;
+    }
+
+    .news-content h2 a:hover {
+      color: rgb(0, 60, 110);
+    }
+
+    .news-content p {
+      font-size: 16px;
+      color: rgb(70, 70, 70);
+      line-height: 24px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgb(240, 240, 240);
+      padding: 20px 0;
+      text-align: center;
+      border-top: 1px solid rgb(220, 220, 220);
+      margin-top: 64px;
+    }
+
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logos img {
+      height: 60px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .footer-logos img:hover {
+      filter: grayscale(0%);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        margin-top: 12px;
+        gap: 20px;
+        flex-direction: column;
+      }
+
+      .news-section h1 {
+        font-size: 32px;
+      }
+
+      .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .news-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">NeuroDetect</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+    </div>
+  </nav>
+
+  <!-- News Section -->
+  <div class="news-section">
+    <h1>Latest News on Brain Tumors</h1>
+
+    <!-- News Item 1 -->
+    <div class="news-item">
+      <img src="static/images/melanoma.jpg" alt="Melanoma Awareness">
+      <div class="news-content">
+        <h2><a href="https://nypost.com/health/what-is-melamona-deadliest-skin-cancer/" target="_blank">Understanding Melanoma: The Deadliest Skin Cancer</a></h2>
+        <p>Melanoma, often termed the 'black tumor,' is the most dangerous form of skin cancer due to its rapid ability to metastasize. Early detection is crucial for effective treatment.</p>
+      </div>
+    </div>
+
+    <!-- News Item 2 -->
+    <div class="news-item">
+      <img src="static/images/nurses_brain_tumor.jpg" alt="Nurses Brain Tumor Concern">
+      <div class="news-content">
+        <h2><a href="https://nypost.com/2025/04/04/health/multiple-nurses-get-brain-tumors-in-the-same-hospital-unit/" target="_blank">Cluster of Brain Tumors Among Hospital Staff Raises Concerns</a></h2>
+        <p>Multiple nurses from the same hospital unit have been diagnosed with brain tumors, prompting investigations into potential environmental factors.</p>
+      </div>
+    </div>
+
+    <!-- News Item 3 -->
+    <div class="news-item">
+      <img src="static/images/childhood_brain_tumor.jpg" alt="Childhood Brain Tumor Risk">
+      <div class="news-content">
+        <h2><a href="https://www.healio.com/news/hematology-oncology/20250204/exposure-to-ct-radiation-increases-risk-for-childhood-brain-tumors" target="_blank">CT Radiation Exposure Linked to Increased Risk of Childhood Brain Tumors</a></h2>
+        <p>Recent studies indicate a positive association between head/neck
+::contentReference[oaicite:0]{index=0}
+ 
