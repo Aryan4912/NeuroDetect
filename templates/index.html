@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuroDetect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+</head>
+<body>
+
+<nav>
+  <div class="logo-container">
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="nav-logo" />
+    <span class="logo-text">NeuroDetect</span>
+  </div>
+
+  <div class="nav-links">
+    <a href="/">Home</a> |
+    <a href="/about">About Us</a> |
+    <a href="/info">Info</a> |
+    <a href="/news">News</a>
+  </div>
+</nav>
+
+
+  <div class="main-content">
+    <h1>Welcome to NeuroDetect</h1>
+    <p>
+      NeuroDetect is a smart AI-powered tool designed to assist in early brain tumor detection using CT scan images.
+      Our system not only detects tumor presence but classifies tumor type and generates a detailed AI diagnostic report.
+    </p>
+
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+      <div class="file-upload-wrapper">
+        <label for="ctscan" class="file-label">Upload CT Scan</label>
+        <input type="file" id="ctscan" name="ctscan" accept=".jpg,.png,.jpeg,.dcm" required />
+        <span class="file-note">Accepted formats: JPG, PNG, JPEG, DICOM</span>
+      </div>
+      <button type="submit" class="upload-btn">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="prediction-result">
+        <h2>Prediction Result:</h2>
+        <pre>{{ prediction }}</pre>
+      </div>
+      <form action="{{ url_for('download_report') }}" method="POST" style="margin-top: 20px;">
+  <input type="hidden" name="prediction_text" value="{{ prediction }}">
+  <button type="submit" class="upload-btn">Download PDF Report</button>
+</form>
+
+      <!-- PDF Download button -->
+          <!-- <form action="{{ url_for('download_report') }}" method="POST" style="margin-top: 20px;"> -->
+            <!-- Send prediction data to backend for PDF -->
+            <!-- <input type="hidden" name="prediction_text" value="{{ prediction|tojson|safe }}">
+            <button type="submit" class="upload-btn">Download PDF Report</button>
+          </form>
+        <!-- {% endif %} --> -->
+  </div>
+
+  <!-- Chatbot Launcher -->
+  <div id="chat-icon" onclick="toggleChatbot()">💬</div>
+
+  <!-- Chat Window -->
+  <div id="chatbot-container" style="display: none;">
+    <div id="chat-header">NeuroBot</div>
+    <div id="chat-body"></div>
+    <input type="text" id="chat-input" placeholder="Ask me anything..." onkeydown="handleChat(event)" />
+  </div>
+
+  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+  <script>
+    function toggleChatbot() {
+      const container = document.getElementById('chatbot-container');
+      container.style.display = container.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+
+  <footer>
+    <div class="footer-logos">
+      <img src="{{ url_for('static', filename='images/AIIMS.png') }}" alt="AIIMS Logo" />
+      <img src="{{ url_for('static', filename='images/WHO_logo.jpeg') }}" alt="WHO Logo" />
+      <img src="{{ url_for('static', filename='images/Medtronic_logo.png') }}" alt="Medtronic Logo" />
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+Prediction: Meningioma
+Confidence: 85.17%
+Note: Please consult a medical professional for diagnosis confirmation.

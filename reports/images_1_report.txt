@@ -1,0 +1,3 @@
+Prediction: Glioma
+Confidence: 75.50%
+Note: Please consult a medical professional for diagnosis confirmation.
