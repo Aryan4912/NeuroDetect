@@ -1,115 +1,61 @@
-# NeuroDetect 🧠
-
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.3+-black.svg)](https://flask.palletsprojects.com/)
-[![IEEE](https://img.shields.io/badge/Publication-IEEE-blue.svg)](https://ieeexplore.ieee.org/document/11379975/)
-
 <div align="center">
 
-# NeuroDetect
+# 🧠 NeuroDetect
 
 **An AI-powered brain tumor detection system using deep learning and attention-enhanced convolutional neural networks.**
 
-Detects and classifies brain tumors from MRI scans using a **CBAM-enhanced InceptionV3 architecture**.
-
-[Features](#features) • [Installation](#installation) • [Usage](#usage) • [Model Architecture](#model-architecture) • [Dataset](#dataset) • [Project Structure](#project-structure)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.3+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![IEEE](https://img.shields.io/badge/Publication-IEEE-00629B?style=for-the-badge)](https://ieeexplore.ieee.org/document/11379975/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](#license)
 
 </div>
 
 ---
 
-# 🚀 Overview
+## 📖 Overview
 
-**NeuroDetect** is a deep learning-based system designed to assist in **brain tumor detection from MRI images**.
+Manual review of MRI scans for brain tumor detection is time-intensive and dependent on specialist availability. **NeuroDetect** replaces the guesswork with a deep learning pipeline that classifies brain tumors directly from MRI images — flagging **glioma, meningioma, pituitary tumor, or no tumor** through a simple web upload, backed by a research-validated model architecture instead of ad-hoc heuristics.
 
-The project combines:
-
-- **InceptionV3 transfer learning**
-- **CBAM attention mechanism**
-- **PyTorch training pipeline**
-- **Flask web interface for predictions**
-- **Research-backed model architecture**
-
-The goal of this project is to demonstrate how **deep learning models can support medical image analysis and assist in tumor detection tasks.**
+Built as a full-stack ML project combining a **CBAM-enhanced InceptionV3 architecture** with a practical Flask web interface, resulting in a peer-reviewed publication on IEEE Xplore.
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-| Feature | Description |
-|-------|-------------|
-| 🧠 **Deep Learning Model** | CBAM-enhanced InceptionV3 architecture |
-| 🩺 **Medical Image Analysis** | Detects tumors from MRI brain scans |
-| 🌐 **Web Interface** | Upload MRI images and receive predictions |
-| ⚡ **Fast Inference** | Real-time classification through Flask app |
-| 📊 **Model Evaluation** | Includes training metrics and evaluation |
-| 📄 **Research Publication** | Model published on IEEE Xplore |
+### 🧠 For Users
+- Upload an MRI brain scan image directly through the web interface
+- Real-time classification via Flask — no local model setup required
+- Clear prediction output with confidence score (e.g. `Glioma Tumor — 96.3%`)
+- Supports four classes: Glioma, Meningioma, Pituitary Tumor, No Tumor
 
----
+### 🔬 For Researchers / Developers
+- CBAM-enhanced InceptionV3 architecture with transfer learning
+- Full training pipeline included via Jupyter notebook
+- Model evaluation with accuracy, precision, recall, and F1 metrics
+- Configurable training via CLI (`--epochs`, `--batch_size`)
 
-# 🛠 Installation
-
-## Prerequisites
-
-- Python 3.8+
-- PyTorch
-- Flask
-- Required Python libraries
+### 📄 Research Credentials
+- Published on **IEEE Xplore**: *Attention Mechanism Enhanced InceptionV3: A Hybrid Deep Learning Approach to Brain Tumor Classification*
+- Demonstrates applied deep learning for medical image analysis
 
 ---
 
-## Quick Setup
+## 🏗️ Tech Stack
 
-```bash
-# Clone the repository
-git clone https://github.com/Aryan4912/NeuroDetect.git
-
-cd NeuroDetect
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the application
-python app.py
-
-# Open in browser
-http://localhost:5000
-````
+| Layer | Technology |
+|---|---|
+| **Model / ML** | PyTorch, InceptionV3, CBAM Attention Mechanism |
+| **Backend** | Python, Flask |
+| **Frontend** | HTML, CSS, Bootstrap, JavaScript |
+| **Data Tools** | NumPy, Pandas |
 
 ---
 
-# 📊 Usage
+## 🤖 Model Architecture
 
-### Web Interface
-
-1. Upload an **MRI brain scan image**
-2. The system processes the image
-3. The model predicts the **tumor type**
-
-Possible predictions include:
-
-* Glioma
-* Meningioma
-* Pituitary Tumor
-* No Tumor
-
----
-
-### Example Prediction
-
-```python
-Prediction: Glioma Tumor
-Confidence: 96.3%
-```
-
----
-
-# 🤖 Model Architecture
-
-The core model uses **InceptionV3 integrated with a CBAM attention module**.
-
-### Architecture Pipeline
+The core model integrates **InceptionV3** with a **CBAM (Convolutional Block Attention Module)** for improved feature focus on tumor regions:
 
 ```
 MRI Image
@@ -125,95 +71,22 @@ Fully Connected Layer
 Softmax Classification
 ```
 
-### Techniques Used
-
-* Transfer Learning
-* Attention Mechanisms (CBAM)
-* Data Augmentation
-* Deep CNN Feature Extraction
+**Techniques used**: transfer learning, attention mechanisms (CBAM), data augmentation, deep CNN feature extraction.
 
 ---
 
-# 📊 Dataset
+## 📊 Dataset & Performance
 
-The model was trained using **MRI brain tumor datasets available on Kaggle**.
+Trained on MRI brain tumor datasets (Kaggle), with images resized, normalized, and augmented across four classes:
 
-Dataset contains images categorized into:
+| Class | Description |
+|---|---|
+| Glioma | Brain tumor originating in glial cells |
+| Meningioma | Tumor arising from the meninges |
+| Pituitary | Tumor in the pituitary gland |
+| No Tumor | Normal MRI scan |
 
-| Class      | Description                            |
-| ---------- | -------------------------------------- |
-| Glioma     | Brain tumor originating in glial cells |
-| Meningioma | Tumor arising from meninges            |
-| Pituitary  | Tumor in pituitary gland               |
-| No Tumor   | Normal MRI scan                        |
-
-Images were **resized, normalized, and augmented** during training.
-
----
-
-# 🏗 Project Structure
-
-```
-NeuroDetect/
-│
-├── app.py
-├── model/
-│   ├── inception_cbam.py
-│   └── model_weights.pth
-│
-├── templates/
-│   └── index.html
-│
-├── static/
-│   ├── css/
-│   └── js/
-│
-├── dataset/
-│
-├── notebooks/
-│   └── training_pipeline.ipynb
-│
-├── requirements.txt
-│
-└── README.md
-```
-
----
-
-# 📄 Research Publication
-
-This project resulted in a research paper:
-
-**Attention Mechanism Enhanced InceptionV3: A Hybrid Deep Learning Approach to Brain Tumor Classification**
-
-Published on **IEEE Xplore**
-
-🔗 [https://ieeexplore.ieee.org/document/11379975/](https://ieeexplore.ieee.org/document/11379975/)
-
----
-
-# 📈 Training
-
-The training pipeline includes:
-
-1. Data preprocessing and augmentation
-2. Transfer learning using InceptionV3
-3. Integration of CBAM attention module
-4. Model training using PyTorch
-5. Performance evaluation using validation metrics
-
-Example training command:
-
-```bash
-python train_model.py --epochs 50 --batch_size 32
-```
-
----
-
-# 📊 Model Performance
-
-Example metrics:
-
+**Example evaluation metrics:**
 ```
 Accuracy: 96%
 Precision: 94%
@@ -223,45 +96,110 @@ F1 Score: 94.5%
 
 ---
 
-# ⚠️ Disclaimer
+## 📁 Project Structure
 
-This project is developed for **educational and research purposes only**.
-
-It is **not intended to replace professional medical diagnosis**.
-
-Always consult qualified medical professionals for clinical decisions.
+```
+NeuroDetect/
+├── app.py                      # Flask application — routes, inference
+├── model/
+│   ├── inception_cbam.py       # CBAM-enhanced InceptionV3 architecture
+│   └── model_weights.pth       # Trained model weights
+├── templates/
+│   └── index.html
+├── static/
+│   ├── css/
+│   └── js/
+├── dataset/                     # Training/validation MRI images
+├── notebooks/
+│   └── training_pipeline.ipynb  # Full training pipeline
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-# 🧰 Built With
+## 🚀 Getting Started
 
-<p align="left">
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" height="25">
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" height="25">
-<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" height="25">
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" height="25">
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" height="25">
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" height="25">
-</p>
+### Prerequisites
+- Python 3.8+
+- PyTorch
+- Flask
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Aryan4912/NeuroDetect.git
+cd NeuroDetect
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the application
+```bash
+python app.py
+```
+Visit `http://localhost:5000` in your browser.
+
+### 4. (Optional) Train the model
+```bash
+python train_model.py --epochs 50 --batch_size 32
+```
+
+---
+
+## 📖 Usage
+
+1. Upload an MRI brain scan image through the web interface
+2. The system preprocesses and runs the image through the model
+3. View the predicted tumor type and confidence score
+
+```python
+Prediction: Glioma Tumor
+Confidence: 96.3%
+```
+
+---
+
+## 📄 Research Publication
+
+**Attention Mechanism Enhanced InceptionV3: A Hybrid Deep Learning Approach to Brain Tumor Classification**
+Published on IEEE Xplore — 🔗 [ieeexplore.ieee.org/document/11379975](https://ieeexplore.ieee.org/document/11379975/)
+
+---
+
+## 🧭 Roadmap
+
+- [ ] Expand dataset to include additional tumor subtypes
+- [ ] Add Grad-CAM visualization for model interpretability
+- [ ] REST API layer for external integration
+- [ ] Dockerized deployment setup
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to check the issues page or open a pull request.
+
+---
+
+## ⚠️ Disclaimer
+
+This project is developed for **educational and research purposes only**. It is **not intended to replace professional medical diagnosis** — always consult qualified medical professionals for clinical decisions.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — feel free to use it as a learning reference or a base for your own medical imaging project.
 
 ---
 
 <div align="center">
 
-### 🧠 AI for Medical Imaging
+**Built by [Aryan Ravindra Pawar](https://github.com/Aryan4912)**
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+[![GitHub](https://img.shields.io/badge/GitHub-Aryan4912-181717?style=flat-square&logo=github)](https://github.com/Aryan4912)
 
 </div>
-```
-
----
-
-### After Adding This
-
-Your GitHub repo will automatically show:
-
-* **Language bar (like in your screenshot)**
-* **Badges**
-* **Sections**
-* **Professional ML project structure**
